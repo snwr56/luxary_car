@@ -134,77 +134,108 @@
     </div>
 
     <script>
-        const questions = [
-            {
-                question: "Quelle marque de voiture a été fondée en 1922 et a son siège à Maranello, Italie ?",
-                options: [
-                    { text: "Lamborghini", correct: false },
-                    { text: "Ferrari", correct: true },
-                    { text: "Maserati", correct: false },
-                    { text: "Pagani", correct: false }
-                ],
-                correctAnswer: "Ferrari"
-            },
-            {
-                question: "Quelle marque a produit le premier moteur V12 à refroidissement par air ?",
-                options: [
-                    { text: "Porsche", correct: true },
-                    { text: "Audi", correct: false },
-                    { text: "Peugeot", correct: false },
-                    { text: "BMW", correct: false }
-                ],
-                correctAnswer: "Porsche"
-            },
-            {
-                question: "Quel constructeur est à l'origine de la première voiture hybride de série au monde ?",
-                options: [
-                    { text: "Honda", correct: false },
-                    { text: "Toyota", correct: true },
-                    { text: "Ford", correct: false },
-                    { text: "Tesla", correct: false }
-                ],
-                correctAnswer: "Toyota"
-            },
-            {
-                question: "Quelle marque de voitures est connue pour ses moteurs boxer ?",
-                options: [
-                    { text: "BMW", correct: false },
-                    { text: "Subaru", correct: true },
-                    { text: "Audi", correct: false },
-                    { text: "Fiat", correct: false }
-                ],
-                correctAnswer: "Subaru"
-            },
-            {
-                question: "Quelle marque automobile a conçu le modèle 911, emblématique de son design ?",
-                options: [
-                    { text: "Mercedes-Benz", correct: false },
-                    { text: "Porsche", correct: true },
-                    { text: "Ferrari", correct: false },
-                    { text: "Aston Martin", correct: false }
-                ],
-                correctAnswer: "Porsche"
-            },
-            {
-                question: "Quel constructeur automobile a produit la voiture de sport Veyron ?",
-                options: [
-                    { text: "McLaren", correct: false },
-                    { text: "Bugatti", correct: true },
-                    { text: "Lamborghini", correct: false },
-                    { text: "Koenigsegg", correct: false }
-                ],
-                correctAnswer: "Bugatti"
+        // Fonction pour mélanger les questions
+        function shuffleQuestions(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
             }
-        ];
+        }
 
-        let currentQuestionIndex = 0;
+        let questions = [
+        {
+            question: "Quelle marque de voiture a été fondée en 1922 et a son siège à Maranello, Italie ?",
+            options: [
+                { text: "Lamborghini", correct: false },
+                { text: "Ferrari", correct: true },
+                { text: "Maserati", correct: false },
+                { text: "Pagani", correct: false }
+            ],
+            correctAnswer: "Ferrari"
+        },
+        {
+            question: "Quelle marque a produit le premier moteur V12 à refroidissement par air ?",
+            options: [
+                { text: "Porsche", correct: true },
+                { text: "Audi", correct: false },
+                { text: "Peugeot", correct: false },
+                { text: "BMW", correct: false }
+            ],
+            correctAnswer: "Porsche"
+        },
+        {
+            question: "Quel constructeur est à l'origine de la première voiture hybride de série au monde ?",
+            options: [
+                { text: "Honda", correct: false },
+                { text: "Toyota", correct: true },
+                { text: "Ford", correct: false },
+                { text: "Tesla", correct: false }
+            ],
+            correctAnswer: "Toyota"
+        },
+        {
+            question: "Quelle marque de voitures est connue pour ses moteurs boxer ?",
+            options: [
+                { text: "BMW", correct: false },
+                { text: "Subaru", correct: true },
+                { text: "Audi", correct: false },
+                { text: "Fiat", correct: false }
+            ],
+            correctAnswer: "Subaru"
+        },
+        {
+            question: "Quelle marque automobile a conçu le modèle 911, emblématique de son design ?",
+            options: [
+                { text: "Mercedes-Benz", correct: false },
+                { text: "Porsche", correct: true },
+                { text: "Ferrari", correct: false },
+                { text: "Aston Martin", correct: false }
+            ],
+            correctAnswer: "Porsche"
+        },
+        {
+            question: "Quel constructeur automobile a produit la voiture de sport Veyron ?",
+            options: [
+                { text: "McLaren", correct: false },
+                { text: "Bugatti", correct: true },
+                { text: "Lamborghini", correct: false },
+                { text: "Koenigsegg", correct: false }
+            ],
+            correctAnswer: "Bugatti"
+        },
+        {
+            question: "Quelle marque de voiture a introduit le modèle électrique Taycan ?",
+            options: [
+                { text: "Porsche", correct: true },
+                { text: "Tesla", correct: false },
+                { text: "BMW", correct: false },
+                { text: "Nissan", correct: false }
+            ],
+            correctAnswer: "Porsche"
+        },
+        {
+            question: "Quel constructeur est connu pour son slogan \"Das Auto\" ?",
+            options: [
+                { text: "Volkswagen", correct: true },
+                { text: "Audi", correct: false },
+                { text: "Mercedes-Benz", correct: false },
+                { text: "Opel", correct: false }
+            ],
+            correctAnswer: "Volkswagen"
+        }
+    ];
+    
+    let currentQuestionIndex = 0;
         let score = 0;
         const questionElement = document.querySelector('.question');
         const optionsContainer = document.querySelector('.options');
         const resultElement = document.querySelector('.result');
-        const correctAnswerElement = document.querySelector('.correct-answer');
         const scoreElement = document.getElementById('score');
+        const finalScoreElement = document.querySelector('.final-score');
         const playAgainBtn = document.querySelector('.play-again');
+
+        // Mélanger les questions au démarrage
+        shuffleQuestions(questions);
 
         function loadQuestion() {
             const currentQuestion = questions[currentQuestionIndex];
@@ -215,12 +246,12 @@
                 const button = document.createElement('button');
                 button.textContent = option.text;
                 button.classList.add('option');
-                button.addEventListener('click', () => handleAnswer(option.correct, currentQuestion.correctAnswer));
+                button.addEventListener('click', () => handleAnswer(option.correct));
                 optionsContainer.appendChild(button);
             });
         }
 
-        function handleAnswer(isCorrect, correctAnswer) {
+        function handleAnswer(isCorrect) {
             if (isCorrect) {
                 resultElement.textContent = 'Bravo ! Bonne réponse !';
                 resultElement.style.color = 'green';
@@ -228,8 +259,6 @@
             } else {
                 resultElement.textContent = 'Dommage ! Mauvaise réponse.';
                 resultElement.style.color = 'red';
-                correctAnswerElement.textContent = `La bonne réponse était : ${correctAnswer}`;
-                correctAnswerElement.style.color = '#007bff';
             }
 
             scoreElement.textContent = score;
@@ -237,14 +266,40 @@
             optionsContainer.querySelectorAll('button').forEach(button => {
                 button.disabled = true;
             });
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                setTimeout(() => {
+                    resultElement.textContent = '';
+                    loadQuestion();
+                }, 1000);
+            } else {
+                setTimeout(() => {
+                    showFinalScore();
+                }, 1000);
+            }
+        }
+
+        function showFinalScore() {
+            questionElement.style.display = 'none';
+            optionsContainer.style.display = 'none';
+            resultElement.style.display = 'none';
+            finalScoreElement.style.display = 'block';
+            finalScoreElement.textContent = `Votre score final est : ${score} / ${questions.length}`;
             playAgainBtn.style.display = 'inline-block';
         }
 
         playAgainBtn.addEventListener('click', () => {
-            resultElement.textContent = '';
-            correctAnswerElement.textContent = '';
+            score = 0;
+            currentQuestionIndex = 0;
+            shuffleQuestions(questions);
+            questionElement.style.display = 'block';
+            optionsContainer.style.display = 'block';
+            resultElement.style.display = 'block';
+            finalScoreElement.style.display = 'none';
             playAgainBtn.style.display = 'none';
-            currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+            scoreElement.textContent = score;
             loadQuestion();
         });
 
@@ -252,3 +307,4 @@
     </script>
 </body>
 </html>
+
