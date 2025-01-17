@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Maserati - Puissance et Élégance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+    
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #000; 
+            color: #A7A8AA; 
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        
+        header {
+            background-color: #002B45; 
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 3px solid #A7A8AA;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+   
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .home-button {
+            background-color: transparent;
+            border: 2px solid #A7A8AA;
+            color: #A7A8AA;
+            padding: 12px 24px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #A7A8AA;
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #111;
+            border-radius: 10px;
+            border: 2px solid #A7A8AA;
+            color: #fff;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #A7A8AA;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+  
+        .car-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .car {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .car:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(167, 168, 170, 0.5);
+        }
+
+        .car img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: opacity 0.3s ease;
+        }
+
+        .car img:hover {
+            opacity: 0.8;
+        }
+
+        .car h3 {
+            font-size: 1.8em;
+            color: #A7A8AA;
+            margin-top: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+      
+        footer {
+            background-color: #002B45; 
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-top: 3px solid #A7A8AA;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Maserati</h1>
+    <div class="navbar">
+        <a href="Acceuil_voiture.html" class="home-button">Acceuil</a>
+        <a href="Ferrari.html" class="home-button">Ferrari</a>
+        <a href="page Porsche.html" class="home-button">Porsche</a>
+        <a href="buggati.html" class="home-button">Buggati</a>
+        <a href="page lamborghini .html" class="home-button">Lamborghini</a>
+        <a href="audi.html" class="home-button">Audi</a>
+        <a href="Mercedes.html" class="home-button">Mercedes</a>
+        <a href="Rolls Royce.html" class="home-button">Rolls Royce</a>
+    </div>
+</header>
+
+<main>
+    <section>
+        <h2>Les Voitures Maserati</h2>
+        <p>
+            Maserati incarne l'élégance, la puissance et l'innovation. Chaque modèle reflète un engagement envers l'excellence et un style sans compromis.
+        </p>
+    </section>
+
+    <h2>Modèles Emblématiques</h2>
+    <section class="car-gallery">
+        <div class="car">
+            <h3>Ghibli</h3>
+            <img src="maserati/Maserati Ghibli 334 Ultima.jpg.webp" alt="Maserati Ghibli">
+            <p>Un modèle de luxe sportif avec une puissance incomparable.</p>
+            <ul>
+                <li>Moteur : V6 biturbo</li>
+                <li>Puissance : 424 ch</li>
+                <li>Accélération 0-100 km/h : 4,7 sec</li>
+            </ul>
+        </div>
+
+        <div class="car">
+            <h3>Levante</h3>
+            <img src="maserati/maserati-levante-2021-side-front.webp" alt="Maserati Levante">
+            <p>Un SUV de luxe, alliant performance et élégance.</p>
+            <ul>
+                <li>Moteur : V6 biturbo</li>
+                <li>Puissance : 430 ch</li>
+                <li>Accélération 0-100 km/h : 5,2 sec</li>
+            </ul>
+        </div>
+
+        <div class="car">
+            <h3>Quattroporte</h3>
+            <img src="maserati/2020_maserati_quattroporte_gt_sport_pack_4k-3840x2160" alt="Maserati Quattroporte">
+            <p>Une berline sportive qui incarne l'innovation et le confort.</p>
+            <ul>
+                <li>Moteur : V8 biturbo</li>
+                <li>Puissance : 580 ch</li>
+                <li>Accélération 0-100 km/h : 4,2 sec</li>
+            </ul>
+        </div>
+
+        <div class="car">
+            <h3>Alfieri</h3>
+            <img src="maserati/2014_maserati_alfieri_concept-HD.jpg" alt="Maserati Alfieri">
+            <p>Un coupé dynamique et futuriste qui repousse les limites de l'innovation.</p>
+            <ul>
+                <li>Moteur : V6 hybride</li>
+                <li>Puissance : 550 ch</li>
+                <li>Accélération 0-100 km/h : 3,5 sec</li>
+            </ul>
+        </div>
+
+        <div class="car">
+            <h3>GranTurismo</h3>
+            <img src="maserati/grandtourismo maserati .jpg" alt="Maserati GranTurismo">
+            <p>Un coupé grand tourisme qui allie élégance, puissance et confort.</p>
+            <ul>
+                <li>Moteur : V8 atmosphérique</li>
+                <li>Puissance : 460 ch</li>
+                <li>Accélération 0-100 km/h : 4,8 sec</li>
+            </ul>
+        </div>
+
+        <div class="car">
+            <h3>MC20</h3>
+            <img src="maserati/MC20 maserati.jpg" alt="Maserati MC20">
+            <p>Un supercar révolutionnaire avec une technologie hybride et une performance exceptionnelle.</p>
+            <ul>
+                <li>Moteur : V6 biturbo</li>
+                <li>Puissance : 630 ch</li>
+                <li>Accélération 0-100 km/h : 2,9 sec</li>
+            </ul>
+        </div>
+    </section>
+    <h2>Les Origines de Maserati</h2>
+<p>
+    Fondée en 1914 à Modène, en Italie, Maserati a été créée par les frères Maserati, des ingénieurs passionnés 
+    d'automobile. Dès le début, la marque s'est distinguée par sa capacité à allier performance, luxe et innovation. 
+    Le premier modèle, la Maserati Tipo 26, a marqué le début d'une longue tradition de voitures de course et de luxe.
+</p>
+
+<div style="text-align: center;">
+    <img src="maserati/1 ere.jpg"width="400" height="300" alt="Maserati Tipo 26">
+</div>
+
+<h2>Les Années 1950 : L'Ascension de Maserati</h2>
+<p>
+    Dans les années 1950, Maserati a consolidé sa réputation avec des modèles légendaires comme la Maserati 3500 GT, 
+    un modèle qui a marqué l'entrée de Maserati dans le marché des voitures de luxe de route. Ces voitures alliaient 
+    des performances exceptionnelles et un design raffiné, devenant des symboles du luxe italien.
+</p>
+
+<div style="text-align: center;">
+    <img src="maserati/1958_Maserati_3500_GT_coupé_-_white_-_fvr.jpg"width="400" height="300" alt="Maserati 3500 GT">
+</div>
+
+<section class="tech-section">
+    <h2>Technologie et Innovation</h2>
+    <p>
+        Maserati est une marque pionnière en matière de technologie automobile. Les voitures Maserati sont connues pour leur 
+        moteur puissant, leur design élégant et leurs technologies avancées.
+    </p>
+    <ul>
+        <li>Technologie moteur : Maserati utilise des moteurs V6 et V8 de haute performance, garantissant une conduite dynamique et réactive.</li>
+        <li>Transmission et suspension : Les voitures Maserati sont dotées de transmissions avancées et de suspensions adaptatives pour une conduite fluide et précise.</li>
+        <li>Technologie hybride : Maserati a lancé des modèles hybrides, comme le Maserati Levante Hybrid, intégrant des technologies modernes pour réduire les émissions tout en offrant des performances de premier ordre.</li>
+    </ul>
+</section>
+
+<h2>Les Modèles Récents</h2>
+<p>
+    Aujourd'hui, Maserati continue d'innover avec des modèles comme la Maserati Levante, un SUV de luxe, et la Maserati MC20, une supercar qui repousse les limites de la performance automobile. Ces modèles combinent puissance, confort et technologies de pointe.
+</p>
+
+<div style="text-align: center;">
+    <img src="maserati/MC20 maserati.jpg"width="400" height="300" alt="Maserati MC20">
+</div>
+
+<h2>L'Héritage de Maserati</h2>
+<p>
+    Maserati est plus qu'une simple marque de voitures. C'est un symbole de l'art automobile italien, alliant passion, 
+    luxe et performance. Depuis plus d'un siècle, Maserati incarne l'élégance et l'innovation, avec des voitures qui 
+    continuent de fasciner les passionnés d'automobile à travers le monde.
+</p>
+
+</main>
+
+<footer>
+    <p>Nathan Gillard</p>
+</footer>
+</body>
+</html>
