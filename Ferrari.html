@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Explorez l'histoire et les modèles emblématiques de Ferrari. Découvrez les technologies avancées qui font de Ferrari une légende de l'automobile.">
+    <title>Ferrari - La Légende de l'Automobile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            color: #ff0000; 
+            line-height: 1.6;
+        }
+
+        
+        header {
+            background-color: #111;
+            color: #ff0000;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 3px solid #ff0000;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .home-button {
+            background-color: transparent;
+            border: 2px solid #ff0000;
+            color: #ff0000;
+            padding: 12px 24px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #ff0000;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #111;
+            border-radius: 10px;
+            border: 2px solid #ff0000;
+            color: #fff;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #ff0000;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        
+        .car-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .car {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .car:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(255, 0, 0, 0.5);
+        }
+
+        .car img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: opacity 0.3s ease;
+        }
+
+        .car img:hover {
+            opacity: 0.8;
+        }
+
+        .car h3 {
+            font-size: 1.8em;
+            color: #ff0000;
+            margin-top: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .car h4 {
+            color: #ff0000;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        .car ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 10px 0 0;
+        }
+
+        .car ul li {
+            margin-bottom: 5px;
+        }
+
+
+        footer {
+            background-color: #111;
+            color: #ff0000;
+            text-align: center;
+            padding: 20px;
+            border-top: 3px solid #ff0000;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Ferrari  <img src="Ferrari/ferrari-logo-0.png" width="150"  height="100"  alt="Logo Ferrari"> </h1>
+    <div class="navbar">
+        <a href="Acceuil_voiture.html" class="home-button">Accueil</a>
+        <a href="buggati.html" class="home-button">Bugatti</a>
+        <a href="Rolls Royce.html" class="home-button">Rolls-Royce</a>
+        <a href="Mercedes.html" class="home-button">Mercedes-Benz</a>
+        <a href="audi.html" class="home-button">Audi</a>
+        <a href="page Porsche.html" class="home-button">Porsche</a>
+        <a href="page lamborghini .html" class="home-button">Lamborghini</a>
+        <a href="page Maserati.html" class="home-button">Maserati</a>
+    </div>
+</header>
+
+<main>
+    <section>
+        <h2>Histoire de Ferrari</h2>
+        <p>
+            Ferrari est une marque de voitures de luxe et de sport italienne, fondée en 1939 par Enzo Ferrari. Depuis des décennies, elle incarne puissance, élégance et innovation.
+        </p>
+    </section>
+
+    <h2>Les Voitures Emblématiques</h2>
+    <section class="car-gallery">
+        <div class="car">
+            <h3>Ferrari 250 GTO</h3>
+         <a href="Page Ferrari 25O Gto.html">   <img src="Ferrari/S0-la-ferrari-250-gto-vaut-largement-moins-cher-que-la-plus-cotee-des-mercedes-205577.jpg" alt="Ferrari 250 GTO"></a>
+            <p>Un modèle inspiré de l'iconique Ferrari 250 GTO, repensé pour l'époque moderne.</p>
+            <h4>Caractéristiques</h4>
+            <ul>
+                <li>Moteur : V12 4,5 L</li>
+                <li>Puissance : 750 ch</li>
+                <li>Vitesse maximale : 350 km/h</li>
+                <li>Accélération 0-100 km/h : 3,0 secondes</li>
+                <li>Poids : 1 280 kg</li>
+            </ul>
+        </div>
+
+        <div class="car">
+            <h3>Ferrari LaFerrari</h3>
+         <a href="Page Laferrari.html"> <img src="Ferrari/laferrari.webp" alt="Ferrari LaFerrari"></a>  
+            <p>LaFerrari, présentée en 2013, est une voiture hybride ultra-sportive qui combine des performances incroyables et une technologie de pointe.</p>
+            <h4>Caractéristiques</h4>
+            <ul>
+                <li>Moteur : V12 6,3 L + moteur électrique</li>
+                <li>Puissance totale : 950 ch</li>
+                <li>Vitesse maximale : 350 km/h</li>
+            </ul>
+        </div>
+
+        <div class="car">
+            <h3>Ferrari F40</h3>
+         <a href="Page F40.html">     <img src="Ferrari/F40_Ferrari_20090509.jpg" alt="Ferrari F40"></a>
+            <p>La Ferrari F40, produite de 1987 à 1992, est un modèle iconique du constructeur, offrant des performances époustouflantes.</p>
+            <h4>Caractéristiques</h4>
+            <ul>
+                <li>Moteur : V8 biturbo de 2,9 L</li>
+                <li>Puissance : 478 ch</li>
+                <li>Vitesse maximale : 324 km/h</li>
+                <li>Accélération 0-100 km/h : 3,8 secondes</li>
+                <li>Poids : 1 100 kg</li>
+            </ul>
+        </div>
+
+        <div class="car">
+            <h3>Ferrari 488 GTB</h3>
+         <a href="Ferrari/ferrari 488.jpg"> <img src="Ferrari/ferrari 488.jpg" alt="Ferrari 488 GTB"></a>
+            <p>La Ferrari 488 GTB, lancée en 2015, est un modèle de grande performance avec un moteur V8 turbocompressé.</p>
+            <h4>Caractéristiques</h4>
+            <ul>
+                <li>Moteur : V8 3,9 L turbocompressé</li>
+                <li>Puissance : 670 ch</li>
+                <li>Vitesse maximale : 330 km/h</li>
+                <li>Accélération 0-100 km/h : 3,0 secondes</li>
+                <li>Poids : 1 470 kg</li>
+            </ul>
+        </div>
+
+
+    <div class="car">
+        <h3>Ferrari 812 Superfast</h3>
+    <a href="page 812 .html">   <img src="Ferrari/ferrari-812-superfast3_2.jpg" width="250" height="150" alt="Ferrari 812 Superfast"></a>
+        <p>La Ferrari 812 Superfast, lancée en 2017, est l'une des voitures de route les plus puissantes du constructeur italien. 
+        Avec un moteur V12 de 800 ch, elle offre des performances exceptionnelles et une expérience de conduite unique.</p>
+        <h4>Caractéristiques</h4>
+        <ul>
+            <li>Moteur : V12 6,5 L</li>
+            <li>Puissance : 800 ch</li>
+            <li>Vitesse maximale : 340 km/h</li>
+            <li>Accélération 0-100 km/h : 2,9 secondes</li>
+            <li>Poids : 1 630 kg</li>
+        </ul>
+    </div>
+
+    <div class="car">
+        <h3>Ferrari Enzo (2002-2004)</h3>
+    <a href="page Ferrari Enzo.html">  <img src="Ferrari/Ferrari-Enzo-jante-en-alu.jpg" alt="Ferrari Enzo"></a>
+        <p>Un hommage à Enzo Ferrari, cette supercar marie puissance et innovation.</p>
+        <h4>Caractéristiques</h4>
+        <ul>
+            <li>Moteur : V12 6,0 L</li>
+            <li>Puissance : 660 ch</li>
+            <li>Vitesse maximale : 355 km/h</li>
+            <li>Accélération 0-100 km/h : 3,6 s</li>
+        </ul>
+    </div>
+
+   
+
+    <div class="car">
+        <h3>Ferrari Dino 246 GT (1968-1974)</h3>
+     <a href="Page Ferrari Dino 246 Gt.html">   <img src="Ferrari/ferrari-dino-246-gt.webp"   alt="Ferrari Dino 246 GT"></a>
+        <p>Un classique intemporel, apprécié pour son design et son agilité.</p>
+        <h4>Caractéristiques</h4>
+        <ul>
+            <li>Moteur : V6 2,4 L</li>
+            <li>Puissance : 195 ch</li>
+            <li>Vitesse maximale : 235 km/h</li>
+        </ul>
+    </div>
+
+
+    <div class="car">
+        <h3>Ferrari Testarossa (1984-1996)</h3>
+    <a href="page Ferrari testarossa .html">  <img src="Ferrari/Ferrari_Testarossa_(14686650099).jpg" alt="Ferrari Testarossa"></a>
+        <p>Un design emblématique des années 80, avec des performances impressionnantes.</p>
+        <h4>Caractéristiques</h4>
+        <ul>
+            <li>Moteur : V12 4,9 L</li>
+            <li>Puissance : 390 ch</li>
+            <li>Vitesse maximale : 290 km/h</li>
+        </ul>
+    </div>
+
+
+    <div class="car">
+        <h3>Ferrari SF90 Stradale (2019-Présent)</h3>
+    <a href="Page Ferrari SF90 Stradale.html">  <img src="Ferrari/Ferrari-SF90-Stradale.jpg.webp" alt="Ferrari SF90 Stradale"></a>
+        <p>Une supercar hybride plug-in combinant technologie de pointe et performances incroyables.</p>
+        <h4>Caractéristiques</h4>
+        <ul>
+            <li>Moteur : V8 4,0 L + moteurs électriques</li>
+            <li>Puissance totale : 1 000 ch</li>
+            <li>Vitesse maximale : 340 km/h</li>
+            <li>Autonomie électrique : 25 km</li>
+        </ul>
+    </div>
+    </section>
+
+<br>
+    <div class="Ferrari">
+        <h2>Les Origines de Ferrari</h2>
+<p>
+    Fondée en 1939 par Enzo Ferrari à Modène, en Italie, Ferrari est l'une des marques les plus emblématiques du 
+    monde automobile. L'objectif d'Enzo Ferrari était de créer des voitures de course rapides et fiables, capables 
+    de dominer les circuits. Ce rêve s'est concrétisé avec la première voiture Ferrari, la 125 S, qui a vu le jour en 1947.
+</p>
+
+<div style="text-align: center;">
+    <img src="Ferrari/1947-ferrari-125-s.webp" width="400" height="250" alt="Ferrari 125 S">
+</div>
+
+<h2>L'Âge d'Or : Les Années 1950 et 1960</h2>
+<p>
+    Dans les années 1950 et 1960, Ferrari a atteint des sommets inégalés, avec des modèles légendaires comme la 
+    Ferrari 250 GTO et la Ferrari Dino. Ces voitures étaient non seulement des prouesses d'ingénierie, mais aussi des 
+    symboles de style et de performance. Ferrari a également dominé les courses automobiles, remportant de nombreux 
+    championnats du monde.
+</p>
+
+<div style="text-align: center;">
+    <img src="Ferrari/S0-la-ferrari-250-gto-vaut-largement-moins-cher-que-la-plus-cotee-des-mercedes-205577.jpg" width="400" height="300" alt="Ferrari 250 GTO">
+</div>
+
+<section class="tech-section">
+    <h2>Technologie et Innovation</h2>
+    <p>
+        Ferrari est un leader en matière d'innovation technologique, alliant puissance, légèreté et aérodynamisme dans 
+        ses voitures de route et de course. La marque continue de repousser les limites de la performance.
+    </p>
+    <ul>
+        <li>Moteur V8 et V12 : Ferrari utilise des moteurs V8 et V12 haute performance, offrant une puissance exceptionnelle et une sonorité inimitable.</li>
+        <li>Système de transmission : Ferrari développe des boîtes de vitesses à double embrayage et des systèmes de transmission innovants pour une conduite fluide et réactive.</li>
+        <li>Aérodynamique avancée : Ferrari intègre des technologies aérodynamiques de pointe pour optimiser la stabilité et les performances sur la route et en compétition.</li>
+    </ul>
+</section>
+
+<h2>Les Modèles Récents</h2>
+<p>
+    Ferrari continue de produire des véhicules qui combinent performance et luxe, tels que la Ferrari LaFerrari, un 
+    hypercar hybride, et la Ferrari SF90 Stradale, qui intègre des technologies de propulsion hybride pour une 
+    performance inégalée. Ces voitures incarnent l'avenir de l'automobile tout en préservant l'héritage de la marque.
+</p>
+
+<div style="text-align: center;">
+    <img src="Ferrari/laferrari.webp" width="400" height="250" alt="Ferrari LaFerrari">
+</div>
+
+<h2>L'Héritage de Ferrari</h2>
+<p>
+    Ferrari est bien plus qu'une simple marque automobile. C'est un symbole de passion, de performance et de style. 
+    Chaque Ferrari est un chef-d'œuvre d'ingénierie, une œuvre d'art qui suscite l'admiration des passionnés du monde entier. 
+    L'héritage de Ferrari continue de vivre à travers ses voitures, ses victoires en compétition et sa quête incessante de 
+    perfection.
+</p>
+
+</main>
+<footer>
+    <p>Nathan Gillard</p>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

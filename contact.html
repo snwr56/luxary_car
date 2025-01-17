@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Contact</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            background: linear-gradient(135deg, #ff5f6d, #ffc3a0);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .contact-info {
+            margin: 20px 0;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .contact-info a {
+            color: #4fc3f7;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            font-size: 28px;
+        }
+
+        .social-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #4fc3f7;
+            color: #fff;
+            transform: scale(1.2);
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #4fc3f7;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #006db3;
+        }
+
+        .return-home {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #f0ad4e;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .return-home:hover {
+            background-color: #d88a28;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Contactez-Moi</h1>
+
+        <div class="contact-info">
+            <p>Je suis disponible sur plusieurs plateformes :</p>
+            <p>Email: <a href="mailto:Nathangillard906@gmail.com">Nathangillard906@gmail.com</a></p>
+            <p>Numéro de téléphone: +33 7 71 82 28 91</p>
+        </div>
+
+        <div class="social-links">
+         
+            <a href="" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/fr/7/75/Snapchat.png" alt="Snapchat" style="width: 40px; height: 40px;"/>
+            </a>
+           
+            <a href="https://www.instagram.com/na.than7412" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" alt="Instagram" style="width: 40px; height: 40px;"/>
+            </a>
+         
+            <a href="https://www.facebook.com/nathan.gillard.94?mibextid=wwXIf&rdid=nhmlpNcXL7WJ837G&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AtA1uJNPr%2F%3Fmibextid%3DwwXIf" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 40px; height: 40px;"/>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Mon site - Tous droits réservés par Nathan Gillard</p>
+        </div>
+    </div>
+
+    <button class="scroll-to-top" id="scrollToTopBtn">↑</button>
+    <button class="return-home" id="returnHomeBtn">🏠</button>
+
+    <script>
+        console.log("Page de contact chargée avec succès !");
+
+        window.onload = function() {
+            alert("Bienvenue sur ma page de contact ! N'hésitez pas à me contacter.");
+        };
+
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const returnHomeBtn = document.getElementById("returnHomeBtn");
+
+        returnHomeBtn.addEventListener('click', function() {
+            window.location.href = "Acceuil_voiture.html"; 
+        });
+    </script>
+
+</body>
+</html>

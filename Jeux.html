@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Devinette - Voitures</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .game-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+
+        .question {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .options button {
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #f4f4f4;
+            transition: all 0.3s ease;
+        }
+
+        .options button:hover {
+            background-color: #d4f1f9;
+            transform: scale(1.05);
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .correct-answer {
+            font-size: 1.1em;
+            color: #007bff;
+            margin-top: 10px;
+            font-weight: normal;
+        }
+
+        .play-again {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 25px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .play-again:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #218838;
+            transform: scale(1.1);
+        }
+
+        .score {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <a href="Acceuil_voiture.html" class="home-button">Accueil</a> <!-- Lien vers la page d'accueil -->
+
+    <div class="game-container">
+        <h1>Jeu de Devinette - Voitures</h1>
+        <div class="question">Devinez la marque de voiture :</div>
+        <div class="options"></div>
+        <div class="result"></div>
+        <div class="correct-answer"></div>
+        <div class="score">Score : <span id="score">0</span></div>
+        <button class="play-again">Rejouer</button>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Quelle marque de voiture a été fondée en 1922 et a son siège à Maranello, Italie ?",
+                options: [
+                    { text: "Lamborghini", correct: false },
+                    { text: "Ferrari", correct: true },
+                    { text: "Maserati", correct: false },
+                    { text: "Pagani", correct: false }
+                ],
+                correctAnswer: "Ferrari"
+            },
+            {
+                question: "Quelle marque a produit le premier moteur V12 à refroidissement par air ?",
+                options: [
+                    { text: "Porsche", correct: true },
+                    { text: "Audi", correct: false },
+                    { text: "Peugeot", correct: false },
+                    { text: "BMW", correct: false }
+                ],
+                correctAnswer: "Porsche"
+            },
+            {
+                question: "Quel constructeur est à l'origine de la première voiture hybride de série au monde ?",
+                options: [
+                    { text: "Honda", correct: false },
+                    { text: "Toyota", correct: true },
+                    { text: "Ford", correct: false },
+                    { text: "Tesla", correct: false }
+                ],
+                correctAnswer: "Toyota"
+            },
+            {
+                question: "Quelle marque de voitures est connue pour ses moteurs boxer ?",
+                options: [
+                    { text: "BMW", correct: false },
+                    { text: "Subaru", correct: true },
+                    { text: "Audi", correct: false },
+                    { text: "Fiat", correct: false }
+                ],
+                correctAnswer: "Subaru"
+            },
+            {
+                question: "Quelle marque automobile a conçu le modèle 911, emblématique de son design ?",
+                options: [
+                    { text: "Mercedes-Benz", correct: false },
+                    { text: "Porsche", correct: true },
+                    { text: "Ferrari", correct: false },
+                    { text: "Aston Martin", correct: false }
+                ],
+                correctAnswer: "Porsche"
+            },
+            {
+                question: "Quel constructeur automobile a produit la voiture de sport Veyron ?",
+                options: [
+                    { text: "McLaren", correct: false },
+                    { text: "Bugatti", correct: true },
+                    { text: "Lamborghini", correct: false },
+                    { text: "Koenigsegg", correct: false }
+                ],
+                correctAnswer: "Bugatti"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        const questionElement = document.querySelector('.question');
+        const optionsContainer = document.querySelector('.options');
+        const resultElement = document.querySelector('.result');
+        const correctAnswerElement = document.querySelector('.correct-answer');
+        const scoreElement = document.getElementById('score');
+        const playAgainBtn = document.querySelector('.play-again');
+
+        function loadQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            questionElement.textContent = currentQuestion.question;
+            optionsContainer.innerHTML = '';
+
+            currentQuestion.options.forEach(option => {
+                const button = document.createElement('button');
+                button.textContent = option.text;
+                button.classList.add('option');
+                button.addEventListener('click', () => handleAnswer(option.correct, currentQuestion.correctAnswer));
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function handleAnswer(isCorrect, correctAnswer) {
+            if (isCorrect) {
+                resultElement.textContent = 'Bravo ! Bonne réponse !';
+                resultElement.style.color = 'green';
+                score++;
+            } else {
+                resultElement.textContent = 'Dommage ! Mauvaise réponse.';
+                resultElement.style.color = 'red';
+                correctAnswerElement.textContent = `La bonne réponse était : ${correctAnswer}`;
+                correctAnswerElement.style.color = '#007bff';
+            }
+
+            scoreElement.textContent = score;
+
+            optionsContainer.querySelectorAll('button').forEach(button => {
+                button.disabled = true;
+            });
+            playAgainBtn.style.display = 'inline-block';
+        }
+
+        playAgainBtn.addEventListener('click', () => {
+            resultElement.textContent = '';
+            correctAnswerElement.textContent = '';
+            playAgainBtn.style.display = 'none';
+            currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+            loadQuestion();
+        });
+
+        loadQuestion();
+    </script>
+</body>
+</html>
