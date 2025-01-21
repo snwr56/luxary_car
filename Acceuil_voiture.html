@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voiture de Luxe </title>
+    <title>Voiture de Luxe</title>
     <style>
+        /* Style général du corps */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             color: #fff;
+            background-color: #000;
+            overflow-x: hidden;
         }
 
-        
+        /* Conception de l'arrière-plan */
         .background {
-            background: url('audi/490123ab-e95b-4a60-8c3a-8273615e9dc4.webp') no-repeat center center fixed;
+            background: url('file:///Users/gillard/Desktop/Site%20voiture%20/Audi/05ff1a57-4893-4eae-bcc1-8cbb180687a1.webp') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
             position: relative;
         }
 
+        /* Superposition d'une couche sombre */
         .overlay {
             background-color: rgba(0, 0, 0, 0.6);
             position: absolute;
@@ -28,50 +32,64 @@
             height: 100%;
         }
 
+        /* Contenu centré */
         .content {
             position: relative;
             z-index: 1;
             text-align: center;
             top: 50%;
             transform: translateY(-50%);
+            padding: 0 20px;
         }
 
         h1 {
             font-size: 4em;
             margin: 0;
+            font-family: 'Georgia', serif;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
         }
 
         p {
             font-size: 1.5em;
             margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        /* Agrandir les boutons */
         button {
-        padding: 20px 40px; /* Augmente la taille des boutons */
-        font-size: 1.5em; /* Agrandit le texte du bouton */
-        background-color: #000;
-         border: 2px solid #fff;
-         color: #fff;
-         cursor: pointer;
-        transition: background-color 0.3s ease;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #1a1a1a;
+            border: 2px solid #fff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
         }
 
         button:hover {
             background-color: #444;
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
         }
 
-        /* Agrandir le bandeau noir en haut */
+        /* Style du menu de navigation */
         nav {
-         position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-         display: flex;
-         justify-content: center;
-         padding: 20px 0; /* Augmente la hauteur du bandeau */
-        z-index: 2;
-         }
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            z-index: 2;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease;
+        }
+
+        nav:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
 
         nav ul {
             list-style: none;
@@ -81,7 +99,7 @@
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 20px;
             position: relative;
         }
 
@@ -89,13 +107,22 @@
             text-decoration: none;
             color: #fff;
             font-size: 1.2em;
+            display: flex;
+            align-items: center;
             transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav ul li a img {
+            margin-left: 5px;
+            height: 1em;
         }
 
         nav ul li a:hover {
             color: #ccc;
         }
 
+        /* Sous-menu */
         nav ul li ul {
             display: none;
             position: absolute;
@@ -104,10 +131,8 @@
             background-color: rgba(0, 0, 0, 0.9);
             list-style: none;
             padding: 10px 0;
-        }
-
-        nav ul li:hover ul {
-            display: block;
+            z-index: 3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
         }
 
         nav ul li ul li {
@@ -118,26 +143,113 @@
         nav ul li ul li a {
             font-size: 1em;
         }
-    </style>
 
+        /* Sous-menu imbriqué */
+        nav ul li ul li ul {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Animation du menu déroulant */
+        nav ul li:hover > ul {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        nav ul li ul li:hover > ul {
+            display: block;
+            animation: slideRight 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .content h1 {
+                font-size: 3em;
+            }
+
+            .content p {
+                font-size: 1.2em;
+            }
+
+            button {
+                padding: 12px 25px;
+            }
+        }
+
+    </style>
 </head>
 <body>
     <nav>
         <ul>
             <li><a href="Acceuil_voiture.html">Home</a></li>
-            <li><a href="#">Models</a>
+            <li>
+                <a href="#">Models</a>
                 <ul>
-                    <li><a href="Ferrari.html">Ferrari</a></li>
-                    <li><a href="audi.html">Audi</a></li>
-                    <li><a href="page lamborghini .html">Lamborghini</a></li>
-                    <li><a href="Mercedes.html">Mercedes</a></li>
-                    <li><a href="page Maserati.html">Maserati</a></li>
-                    <li><a href="Rolls Royce.html">Rolls-Royce</a></li>
-                    <li><a href="page Porsche.html">Porsche</a></li>
-                    <li><a href="buggati.html">Buggati</a></li>
+                    <li>
+                        <a href="#">Italy <span>🇮🇹</span></a>
+                        <ul>
+                            <li><a href="Ferrari.html">Ferrari</a></li>
+                            <li><a href="page lamborghini .html">Lamborghini</a></li>
+                            <li><a href="page Maserati.html">Maserati</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">German <span>🇩🇪</span></a>
+                        <ul>
+                            <li><a href="audi.html">Audi</a></li>
+                            <li><a href="Mercedes.html">Mercedes</a></li>
+                            <li><a href="page Porsche.html">Porsche</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">UK <span>🇬🇧</span></a>
+                        <ul>
+                            <li><a href="Rolls Royce.html">Rolls-Royce</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">French <span>🇫🇷</span></a>
+                        <ul>
+                            <li><a href="buggati.html">Buggati</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
-            <li><a href="Jeux.html"> Games </a></li>
+            <li><a href="Jeux.html">Games</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -147,17 +259,23 @@
         <div class="content">
             <h1>Voiture de luxe</h1>
             <p>Apprenez plus sur les voitures !!!</p>
-         <a href="https://www.autoencyclopedie.com">   <button onclick="learnMore()">Apprendre plus </button></a>
+            <a href="https://www.autoencyclopedie.com"><button onclick="learnMore()">Apprendre plus</button></a>
         </div>
     </div>
 
     <script>
+        function toggleMenu(event) {
+            event.preventDefault(); // Empêche le comportement par défaut du lien
+            const submenu = event.target.nextElementSibling; // Trouve le sous-menu
+            if (submenu && submenu.tagName === 'UL') {
+                // Alterne l'affichage du sous-menu
+                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+
         function learnMore() {
-            alert("Bienvenue dans le monde l automobile ");
+            alert("Bienvenue dans le monde l'automobile");
         }
     </script>
-<footer>
-    <p>Nathan Gillard</p>
-</footer>
 </body>
 </html>
